@@ -1,8 +1,10 @@
-<!-- import aframe and then ar.js with image tracking / location based features -->
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-
-<!-- style for the loader -->
+<html>
+<head>
+  <title>artest</title>
+  <meta charset="UTF-8">
+  <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+</head>
 <style>
   .arjs-loader {
     height: 100%;
@@ -25,50 +27,48 @@
 </style>
 
 <body style="margin : 0px; overflow: hidden;">
-  <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
+  <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
-    <div>Loading, please wait...</div>
+    <div>読み込み中です</div>
   </div>
-
-  <!-- a-frame scene -->
   <a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
-    <!-- a-nft is the anchor that defines an Image Tracking entity -->
-    <!-- on 'url' use the path to the Image Descriptors created before. -->
-    <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
+    <a-assets>
+      <img id="ha" src="ha.png">
+    </a-assets>
+    <!-- we use cors proxy to avoid cross-origin problems -->
+    <a-nft
+      type="nft"
+      url="sticker"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+      <a-text
+        position="300 100 -450"
+        rotation="-60 0 0"
+        letterSpacing="10"
+        align="center"
+        value="ARテスト"
+        color="red"
+        font="noto-sans-cjk-jp-msdf.json"
+        font-image="noto-sans-cjk-jp-msdf.png"
+        negate="false"
+        scale="500 500 500">
+      </a-text>
+      <a-entity position="300 0 -400" scale="5 5 5" animation="property: position; to: 300 600 -400; loop: true; dur: 3000;">
+        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 0 0; loop: true; dur: 3000;">
+          <a-image width="54" height="30" src="#ha"></a-image>
+        </a-entity>
+      </a-entity>
 
-    
-  <a-nft type="nft" url="sticker">
-  
-  <!--アセットの追加-->
-  <a-assets>
-    <img id="ha" src="ha.png">
-  </a-assets>
-
-  <!--動かす部分-->
-  <a-entity position="300 0 -400" scale="5 5 5" animation="property: position; to: 300 600 -400; loop: true; dur: 3000;">
-    <a-image width="54" height="30" src="#ha"></a-image>
-  </a-entity>
-    
-  <!--文章の表示-->
-  <a-text
-    position="300 100 -450"
-    rotation="-60 0 0"
-    letterSpacing="10"
-    align="center"
-    value="謹賀新年"
-    color="red"
-    font="noto-sans-cjk-jp-msdf.json"
-    font-image="noto-sans-cjk-jp-msdf.png"
-    negate="false"
-    scale="500 500 500">
-  </a-text>
-    
-    <!-- static camera that moves according to the device movemenents -->
+    </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
 </body>
+</html>
