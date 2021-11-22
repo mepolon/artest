@@ -29,7 +29,7 @@
 <body style="margin : 0px; overflow: hidden;">
   <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
-    <div>読み込み中です🐮</div>
+    <div>読み込み中です�</div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
@@ -38,17 +38,18 @@
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
     <a-assets>
-      <img id="cow" src="cow.png">
+      <img id="mol" src="morupeko.png">
     </a-assets>
     <!-- we use cors proxy to avoid cross-origin problems -->
     <a-nft
       type="nft"
-      url="newyear_2021"
+      url="ball"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
     >
+      <!--
       <a-text
         position="300 100 -450"
         rotation="-60 0 0"
@@ -61,23 +62,11 @@
         negate="false"
         scale="500 500 500">
       </a-text>
-      <a-entity position="300 0 -400" scale="5 5 5" animation="property: position; to: 300 600 -400; loop: true; dur: 3000;">
-        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 0 0; loop: true; dur: 3000;">
-          <a-image width="54" height="30" src="#cow"></a-image>
-        </a-entity>
+      -->
+      <a-entity position="0 10 0" rotation="-60 0 0">
+        <a-image width="54" height="30" src="#mol"></a-image>
       </a-entity>
 
-      <a-entity position="100 0 -600" scale="5 5 5" animation="property: position; to: 100 600 -600; loop: true; dur: 3000; delay: 2000">
-        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 0 720; loop: true; dur: 5000; delay: 2000">
-          <a-image width="54" height="30" src="#cow"></a-image>
-        </a-entity>
-      </a-entity>
-
-      <a-entity position="500 0 -500" scale="5 5 5" animation="property: position; to: 500 1000 -500; loop: true; dur: 1500; delay: 3000">
-        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 0 720; loop: true; dur: 1500; delay: 3000">
-          <a-image width="54" height="30" src="#cow"></a-image>
-        </a-entity>
-      </a-entity>
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
