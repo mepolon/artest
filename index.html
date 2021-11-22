@@ -40,22 +40,34 @@
     <!-- a-nft is the anchor that defines an Image Tracking entity -->
     <!-- on 'url' use the path to the Image Descriptors created before. -->
     <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
-    <a-nft
-      type="nft"
-      url="sticker"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"
-    >
-        <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-        <a-entity
-            gltf-model="<path-to-your-model>"
-            scale="5 5 5"
-            position="50 150 0"
-        >
-        </a-entity>
-    </a-nft>
+
+    
+  <a-nft type="nft" url="sticker">
+  
+  <!--アセットの追加-->
+  <a-assets>
+    <img id="ha" src="ha.png">
+  </a-assets>
+
+  <!--動かす部分-->
+  <a-entity position="300 0 -400" scale="5 5 5" animation="property: position; to: 300 600 -400; loop: true; dur: 3000;">
+    <a-image width="54" height="30" src="#ha"></a-image>
+  </a-entity>
+    
+  <!--文章の表示-->
+  <a-text
+    position="300 100 -450"
+    rotation="-60 0 0"
+    letterSpacing="10"
+    align="center"
+    value="謹賀新年"
+    color="red"
+    font="noto-sans-cjk-jp-msdf.json"
+    font-image="noto-sans-cjk-jp-msdf.png"
+    negate="false"
+    scale="500 500 500">
+  </a-text>
+    
     <!-- static camera that moves according to the device movemenents -->
     <a-entity camera></a-entity>
   </a-scene>
