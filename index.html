@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>artest</title>
+  <title>年賀状2021</title>
   <meta charset="UTF-8">
   <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
@@ -29,7 +29,7 @@
 <body style="margin : 0px; overflow: hidden;">
   <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
-    <div>読み込み中です</div>
+    <div>読み込み中です🐮</div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
@@ -38,37 +38,46 @@
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
     <a-assets>
-      <img id="ha" src="ha.png">
+      <img id="cow" src="./c1.png">
     </a-assets>
     <!-- we use cors proxy to avoid cross-origin problems -->
     <a-nft
       type="nft"
-      url="newyear_2021"
+      url="https://vr.jyuko49.com/newyear/2021/nft/newyear_2021"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-      
-    <a-text
-      position="300 100 -450"
-      rotation="-60 0 0"
-      letterSpacing="10"
-      align="center"
-      value="謹賀新年"
-      color="red"
-      font="noto-sans-cjk-jp-msdf.json"
-      font-image="noto-sans-cjk-jp-msdf.png"
-      negate="false"
-      scale="500 500 500">
-    </a-text>
-    
-    <!--
-    <a-entity position="0 0 0"  scale="5 5 5">
-      <a-image width="54" height="30" src="#ha"></a-image>
-    </a-entity>
-    -->
+      <a-text
+        position="300 100 -450"
+        rotation="-60 0 0"
+        letterSpacing="10"
+        align="center"
+        value="謹賀新年"
+        color="red"
+        font="noto-sans-cjk-jp-msdf.json"
+        font-image="noto-sans-cjk-jp-msdf.png"
+        negate="false"
+        scale="500 500 500">
+      </a-text>
+      <a-entity position="300 0 -400" scale="5 5 5" animation="property: position; to: 300 600 -400; loop: true; dur: 3000;">
+        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 0 0; loop: true; dur: 3000;">
+          <a-image width="54" height="30" src="#cow"></a-image>
+        </a-entity>
+      </a-entity>
 
+      <a-entity position="100 0 -600" scale="5 5 5" animation="property: position; to: 100 600 -600; loop: true; dur: 3000; delay: 2000">
+        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 0 720; loop: true; dur: 5000; delay: 2000">
+          <a-image width="54" height="30" src="#cow"></a-image>
+        </a-entity>
+      </a-entity>
+
+      <a-entity position="500 0 -500" scale="5 5 5" animation="property: position; to: 500 1000 -500; loop: true; dur: 1500; delay: 3000">
+        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 0 720; loop: true; dur: 1500; delay: 3000">
+          <a-image width="54" height="30" src="#cow"></a-image>
+        </a-entity>
+      </a-entity>
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
