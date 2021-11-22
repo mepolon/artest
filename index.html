@@ -37,10 +37,12 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
+    <a-box color="#689F38" width="8" height="4.5" depth = "0.2" position="687 100 -1016" rotasion="-60 0 0"></a-box>
     <a-assets>
       <img id="mol" src="morupeko.png">
     </a-assets>
     <!-- we use cors proxy to avoid cross-origin problems -->
+    <!--
     <a-nft
       type="nft"
       url="img"
@@ -49,7 +51,6 @@
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-      <a-box color="#689F38" width="8" height="4.5" depth = "0.2" position="687 100 -1016" rotasion="-60 0 0"></a-box>
       <!--
       <a-text
         position="300 100 -450"
@@ -70,6 +71,7 @@
       </a-entity>
 
     </a-nft>
+    -->
     <a-entity camera></a-entity>
   </a-scene>
 </body>
