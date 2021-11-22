@@ -9,6 +9,20 @@
 </head>
 <body>
   ここにテキストを記入
+
+  <!--マーカーに使用する画像を設定-->
+  <a-nft type="nft" url="sticker">
+  
+  <!--アセットの追加-->
+  <a-assets>
+    <img id="ha" src="ha.png">
+  </a-assets>
+
+  <!--動かす部分-->
+  <a-entity position="300 0 -400" scale="5 5 5" animation="property: position; to: 300 600 -400; loop: true; dur: 3000;">
+    <a-image width="54" height="30" src="#ha"></a-image>
+  </a-entity>
+    
   <!--
     <header>
       <div class="container">
