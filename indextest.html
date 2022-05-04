@@ -56,17 +56,11 @@
 
       <a-marker type='pattern' url='./image/pattern.patt'>
         <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
-        <a-entity>
+        <a-entity             animation="property: rotation; from: 0 0 0; to: 0 360 0; dur: 10000; loop: true; easing: linear">
             <a-plane 
             src="#door"
             position="0 0.5 0"
             rotation="-90 0 0"
-            animation="property: rotation;
-            from: 0 0 0;
-            to: 0 360 0;
-            dur: 10000;
-            loop: true;
-            easing: linear">
             >
           </a-plane>
         </a-entity>
